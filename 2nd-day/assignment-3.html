@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Date Formats: <span id="format"></span></p>
+    <p><span id="format1"></span></p>
+    <p><span id="format2"></span></p>
+    <p><span id="format3"></span></p>
+
+</body>
+
+<script>
+    var d = new Date();
+
+    var month = d.getMonth() + 1;
+    var date = d.getDate();
+    var year = d.getFullYear();
+
+    if (month === 13) {
+        month = 1
+    }
+    if (month < 10)
+        month = `0${month}`;
+
+
+    document.getElementById("format").innerHTML = `${month}-${date}-${year}`;
+    document.getElementById("format1").innerHTML = `${month}/${date}/${year}`
+    document.getElementById("format2").innerHTML = `${date}-${month}-${year}`;
+    document.getElementById("format3").innerHTML = `${date}/${month}-${year}`
+</script>
+
+</html>
